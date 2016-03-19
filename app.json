@@ -1,0 +1,11 @@
+{
+  "name": "Rust/Pencil hello world server",
+  "description": "A hello world web server based on the Pencil Rust framework.",
+  "repository": "https://github.com/archaelus/rello",
+  "success_url": "/",
+  "keywords": ["rust", "pencil"],
+  "website": "https://github.com/archaelus/rello/",
+  "env": {
+    "BUILDPACK_URL": "https://github.com/Hoverbear/heroku-buildpack-rust.git"
+  }
+}
