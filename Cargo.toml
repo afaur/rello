@@ -1,0 +1,7 @@
+[package]
+name = "rello"
+version = "0.1.0"
+authors = ["Geoff Cant <nem@erlang.geek.nz>"]
+
+[dependencies]
+pencil = "*"
