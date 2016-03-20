@@ -15,9 +15,9 @@ fn listen_port() -> u16 {
 
 fn main() {
     let port = listen_port();
-    let listen_addr = format!("127.0.0.1:{}", port);
+    let listen_addr = format!("0.0.0.0:{}", port);
     println!("Listening at {}.", listen_addr);
     let mut app = Pencil::new("/web/hello");
     app.get("/", "hello", hello);
-    app.run(("127.0.0.1", port));
+    app.run(("0.0.0.0", port));
 }
