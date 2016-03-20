@@ -4,7 +4,16 @@ Your typical curl / -> "200 Hello World" app, but in Rust using the Pencil frame
 
 ## Build
 
+If you have Rust and openssl installed properly
+
     $ cargo build
+
+On my OS X 10.11 machine, I have to:
+
+    $ brew install multirust openssl
+    $ multirust default stable
+    $ multirust update
+    $ env OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)"/include" OPENSSL_LIB_DIR=$(brew --prefix openssl)"/lib" cargo build
 
 ## Run
 
