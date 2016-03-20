@@ -2,6 +2,8 @@
 name = "rello"
 version = "0.1.0"
 dependencies = [
+ "env_logger 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "log 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "pencil 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -98,6 +100,15 @@ dependencies = [
 name = "encoding_index_tests"
 version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "env_logger"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "log 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "regex 0.1.58 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "formdata"

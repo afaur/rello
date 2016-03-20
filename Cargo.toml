@@ -5,6 +5,8 @@ authors = ["Geoff Cant <nem@erlang.geek.nz>"]
 
 [dependencies]
 pencil = "*"
+log = "*"
+env_logger = "*"
 
 [target.heroku]
 version = "stable"

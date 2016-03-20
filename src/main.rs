@@ -1,5 +1,8 @@
 extern crate pencil;
 
+#[macro_use] extern crate log;
+extern crate env_logger;
+
 use pencil::{Pencil, Request, Response, PencilResult};
 use std::env;
 use std::str::FromStr;
@@ -26,8 +29,17 @@ fn main() {
     let listen_addr = if running_on_heroku() { "0.0.0.0" } else { "127.0.0.1" };
     let port = listen_port();
     let root_path = static_path().to_string_lossy().into_owned();
-    println!("Listening at {}:{} (root: {}).", listen_addr, port, root_path);
     let mut app = Pencil::new(&root_path);
+
+    // Routes
     app.get("/", "hello", hello);
+
+    // Logging
+    app.set_debug(true);
+    app.set_log_level();
+    env_logger::init().unwrap();
+
+    // Listen and run
+    debug!("Listening at {}:{} (root: {}).", listen_addr, port, root_path);
     app.run((listen_addr.as_ref(), port));
 }
