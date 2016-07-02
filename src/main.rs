@@ -10,10 +10,6 @@ use std::env;
 use std::str::FromStr;
 use std::path::PathBuf;
 
-fn hello(_: &mut Request) -> PencilResult {
-    Ok(Response::from("Hello World!"))
-}
-
 fn listen_port() -> u16 {
     let port_str = env::var("PORT").unwrap_or(String::new());
     FromStr::from_str(&port_str).unwrap_or(5000)
@@ -34,16 +30,13 @@ fn main() {
     let mut app = Pencil::new(&root_path);
 
     // Routes
-    app.get("/", "hello", hello);
-    /*
-    app.get("/<string:name>", "hello", |r| {
+    app.get("/<name:string>", "hello", |r| {
       Ok(
         Response::from(
           format!( "Hello, {}!", r.view_args.get("name").unwrap() )
         )
       )
     });
-    */
 
     // Logging
     app.set_debug(true);
