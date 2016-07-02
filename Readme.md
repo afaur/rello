@@ -1,3 +1,16 @@
+# Test example
+The `pencil` dependency should be set to the `closures` branch.
+```
+cd deps
+rm -rf pencil
+git clone git@github.com:afaur/pencil.git
+cd pencil
+git checkout closures
+cd ../..
+cargo run
+open http://localhost:5000/somename
+```
+
 # Rello - A hello world webapp in Pencil/Rust
 
 Your typical curl / -> "200 Hello World" app, but in Rust using the Pencil framework. Deploys easily on Heroku.
